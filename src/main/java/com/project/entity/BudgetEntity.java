@@ -1,4 +1,4 @@
-package tutorial.fromemployee.totask.task_api.entity;
+package com.project.entity;
 
 import java.util.Date;
 
@@ -10,15 +10,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tasks")
-public class TaskEntity {
+@Table(name = "budgets")
+public class BudgetEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "task_id")
+    @Column(name = "budget_id")
     private Long id;
 
-    @Column(name = "task_name")
+    @Column(name = "budget_name")
     private String name;
 
     @Column(name = "start_date")
@@ -30,10 +30,10 @@ public class TaskEntity {
     @Column(name = "category")
     private String category;
 
-    public TaskEntity() {
+    public BudgetEntity() {
     }
 
-    public TaskEntity(Long id, String name, Date startDate, Date dueDate, String category) {
+    public BudgetEntity(Long id, String name, Date startDate, Date dueDate, String category) {
         this.id = id;
         this.name = name;
         this.startDate = startDate;

@@ -1,10 +1,10 @@
-package tutorial.fromemployee.totask.task_api;
+package com.project.budget;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TaskApiApplicationTests {
+class BudgetApplicationTests {
 
 	@Test
 	void contextLoads() {

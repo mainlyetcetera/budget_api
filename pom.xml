@@ -8,11 +8,11 @@
 		<version>2.7.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>tutorial.fromemployee.totask</groupId>
-	<artifactId>task_api</artifactId>
+	<groupId>com.project</groupId>
+	<artifactId>budget</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>task_api</name>
-	<description>Task Manager REST API Example</description>
+	<name>budget</name>
+	<description>Budget API</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -25,11 +25,20 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct</artifactId>
+			<version>1.4.2.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct-processor</artifactId>
+			<version>1.4.2.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

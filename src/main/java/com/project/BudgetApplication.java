@@ -1,13 +1,13 @@
-package tutorial.fromemployee.totask.task_api;
+package com.project;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TaskApiApplication {
+public class BudgetApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TaskApiApplication.class, args);
+		SpringApplication.run(BudgetApplication.class, args);
 	}
 
 }
