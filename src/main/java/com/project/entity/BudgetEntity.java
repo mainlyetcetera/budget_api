@@ -15,30 +15,23 @@ public class BudgetEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "budget_id")
     private Long id;
 
-    @Column(name = "budget_name")
     private String name;
 
-    @Column(name = "start_date")
-    private Date startDate;
+    private Double total;
 
-    @Column(name = "due_date")
-    private Date dueDate;
-
-    @Column(name = "category")
-    private String category;
+    @Column(name = "created_at")
+    private Date createdAt;
 
     public BudgetEntity() {
     }
 
-    public BudgetEntity(Long id, String name, Date startDate, Date dueDate, String category) {
+    public BudgetEntity(Long id, String name, Double total, Date createdAt) {
         this.id = id;
         this.name = name;
-        this.startDate = startDate;
-        this.dueDate = dueDate;
-        this.category = category;
+        this.total = total;
+        this.createdAt = createdAt;
     }
 
     public Long getId() {
@@ -57,28 +50,20 @@ public class BudgetEntity {
         this.name = name;
     }
 
-    public Date getStartDate() {
-        return startDate;
+    public Double getTotal() {
+        return total;
     }
 
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
+    public void setTotal(Double total) {
+        this.total = total;
     }
 
-    public Date getDueDate() {
-        return dueDate;
+    public Date getCreatedAt() {
+        return createdAt;
     }
 
-    public void setDueDate(Date dueDate) {
-        this.dueDate = dueDate;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
     }
 
 }

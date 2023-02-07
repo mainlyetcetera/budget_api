@@ -1,0 +1,78 @@
+Table budget_api.budgets {
+  id int [pk, increment]
+  name varchar(75)
+  total double(2) [default: `0`]
+  created_at datetime [default: `now()`]
+}
+
+// these are things like food, entertainment, groceries, etc.
+Table budget_api.categories {
+  id int [pk, increment]
+  name varchar(75)
+}
+
+Table budget_api.stmt_names {
+  id int [pk, increment]
+  name varchar(75)
+}
+
+Table budget_api.credits {
+  id int [pk, increment]
+  name varchar(75)
+  total double(2)
+  date date
+  category_id int [ref: > budget_api.categories.id]
+  budget_id int [ref: > budget_api.budgets.id]
+  listed_on_stmt_as varchar(75) [ref: > budget_api.stmt_names.id]
+}
+
+Table budget_api.buckets {
+  id int [pk, increment]
+  name varchar(75)
+  started_with double(2)
+  remaining double(2)
+  date date
+  category_id int [ref: > budget_api.categories.id]
+  budget_id int [ref: > budget_api.budgets.id]
+}
+
+Table budget_api.expenses {
+  id int [pk, increment]
+  name varchar(75)
+  total double(2)
+  date date
+  category_id int [ref: > budget_api.categories.id]
+  budget_id int [ref: > budget_api.budgets.id]
+  listed_on_stmt_as varchar(75) [ref: > budget_api.stmt_names.id]
+  bucket_id int [ref: > budget_api.buckets.id]
+  is_static bool
+}
+
+Table budget_api.debts {
+  id int [pk, increment]
+  name varchar(75)
+  total double(2)
+  date date
+  budget_id int [ref: > budget_api.budgets.id]
+  listed_on_stmt_as varchar(75) [ref: > budget_api.stmt_names.id]
+  interest_rate double(2)
+  debt_balance double(2)
+  // will want to have server calculate debt balance w/ interest rate so can see
+}
+
+Table budget_api.modes {
+  id int [pk, increment]
+  name varchar(75)
+}
+
+Table budget_api.keyboard_shortcuts {
+  id int [pk, increment]
+  name varchar(75)
+  function varchar(75)
+}
+
+Table budget_api.modes_sharing_shortcuts {
+  id int [pk, increment]
+  mode_id int [ref: > budget_api.modes.id]
+  keyboard_shortcut_id int [ref: > budget_api.keyboard_shortcuts.id]
+}
